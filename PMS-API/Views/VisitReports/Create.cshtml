@@ -1,0 +1,103 @@
+﻿@model PMS_API.Models.VisitReport
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Create", "VisitReports", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div id="content" class="span10">
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home"></i>
+                <a href="index.html">Home</a>
+                <i class="icon-angle-right"></i>
+            </li>
+            <li>
+                <i class="icon-edit"></i>
+                <a href="#">New Visits</a>
+            </li>
+        </ul>
+
+        <div class="row-fluid sortable">
+            <div class="box span12">
+                <div class="box-header" data-original-title="">
+                    <h2><i class="halflings-icon edit"></i><span class="break"></span>New Visits</h2>
+                </div>
+                <div class="box-content">
+
+                    @*<form class="form-horizontal" action="/VisitReports/Create" enctype="multipart/form-data" method="post">*@
+                    <fieldset>
+
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Project Name</label>
+                            <div class="controls">
+                                @Html.DropDownList("NewProjectId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.NewProjectId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Project Status</label>
+                            <div class="controls">
+                                @Html.DropDownList("ProjectHealthId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProjectHealthId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Project Health</label>
+                            <div class="controls">
+                                @Html.DropDownList("ProjectStatusId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProjectStatusId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Action Plan Report </label>
+                            <div class="controls">
+                                <input type="file" name="ActionPlanReportUrl" id="ActionPlanReportUrl" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Project Picture </label>
+                            <div class="controls">
+                                <input type="file" name="ProjectPicture" id="ProjectPicture" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Comments</label>
+                            <div class="controls">
+                                <input class="input-xlarge disabled" id="comments" type="textarea" name="comments" value="" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Notes</label>
+                            <div class="controls">
+                                <input class="input-xlarge disabled" id="notes" type="text" name="notes" value="" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Visited On</label>
+                            <div class="controls">
+                                <input class="input-xlarge focused" id="visitedOn" type="text" name="visitedOn" value="" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError">Visited By</label>
+                            <div class="controls">
+                                <input class="input-xlarge disabled" id="visitedBy" type="text" name="visitedBy" value="" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button class="btn">Cancel</button>
+                        </div>
+                    </fieldset>
+
+                    @*</form>*@
+                </div>
+            </div><!--/span-->
+        </div>
+    </div>
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ef69f712d2945928bf23893596b49bc" Name="Diagram1">
+        <EntityTypeShape EntityType="PMSModel.Application" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.Architect" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.AutocadDiagram" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.BusinessPartner" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.Checklist" Width="1.5" PointX="10.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.FixingType" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.NewProject" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.Owner" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.ProjectHealth" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.ProjectPicture" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.ProjectStatu" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.ProjectType" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMSModel.VisitReport" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="PMSModel.FK_ApplicationsNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_ArchitectNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_NewProjectAutocadDiagrams" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_BusinessPartnerNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_VisitReportChecklist" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_FixingTypeNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_NewProjectVisitReport" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_OwnerNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_ProjectTypeNewProject" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_ProjectHealthVisitReport" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_VisitReportProjectPictures" ManuallyRouted="false" />
+        <AssociationConnector Association="PMSModel.FK_ProjectStatusVisitReport" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

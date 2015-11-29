@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Architects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FirmName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EmailId" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AutocadDiagrams">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NewProjectId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessPartners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OwnerName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Emailid" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Checklists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VisitReportId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FixingTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewProjects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CommencedOn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConcludedOn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ArchitectId" Type="int" Nullable="false" />
+          <Property Name="BusinessPartnerId" Type="int" Nullable="false" />
+          <Property Name="PlanUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SectionsUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ElevationsUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TDImageUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AreaPanelCalculationUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConceptsDrawingUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OptimizationUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ShopDrawingUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AnalysisUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BOQUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="InteriorUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OwnerId" Type="int" Nullable="false" />
+          <Property Name="ProjectTypeId" Type="int" Nullable="false" />
+          <Property Name="FixingTypeId" Type="int" Nullable="false" />
+          <Property Name="ApplicationsId" Type="int" Nullable="false" />
+          <Property Name="TDRenderImageUrl" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Owners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectHealths">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectPictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Picture" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VisitReportId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VisitReports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VisitedBy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VisitedOn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActionPlanReportUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NewProjectId" Type="int" Nullable="false" />
+          <Property Name="ProjectStatusId" Type="int" Nullable="false" />
+          <Property Name="ProjectHealthId" Type="int" Nullable="false" />
+          <Property Name="comments" Type="nvarchar(max)" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="ProjectPictures" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_ApplicationsNewProject">
+          <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ApplicationsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchitectNewProject">
+          <End Role="Architects" Type="Self.Architects" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Architects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ArchitectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessPartnerNewProject">
+          <End Role="BusinessPartners" Type="Self.BusinessPartners" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessPartners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="BusinessPartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixingTypeNewProject">
+          <End Role="FixingTypes" Type="Self.FixingTypes" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FixingTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="FixingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewProjectAutocadDiagrams">
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="1" />
+          <End Role="AutocadDiagrams" Type="Self.AutocadDiagrams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewProjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutocadDiagrams">
+              <PropertyRef Name="NewProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewProjectVisitReport">
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewProjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="NewProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnerNewProject">
+          <End Role="Owners" Type="Self.Owners" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Owners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="OwnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectHealthVisitReport">
+          <End Role="ProjectHealths" Type="Self.ProjectHealths" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectHealths">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="ProjectHealthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectStatusVisitReport">
+          <End Role="ProjectStatus" Type="Self.ProjectStatus" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="ProjectStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectTypeNewProject">
+          <End Role="ProjectTypes" Type="Self.ProjectTypes" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ProjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitReportChecklist">
+          <End Role="VisitReports" Type="Self.VisitReports" Multiplicity="1" />
+          <End Role="Checklists" Type="Self.Checklists" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitReports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Checklists">
+              <PropertyRef Name="VisitReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitReportProjectPictures">
+          <End Role="VisitReports" Type="Self.VisitReports" Multiplicity="1" />
+          <End Role="ProjectPictures" Type="Self.ProjectPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitReports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPictures">
+              <PropertyRef Name="VisitReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PMSModelStoreContainer">
+          <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Architects" EntityType="Self.Architects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutocadDiagrams" EntityType="Self.AutocadDiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessPartners" EntityType="Self.BusinessPartners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Checklists" EntityType="Self.Checklists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FixingTypes" EntityType="Self.FixingTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewProjects" EntityType="Self.NewProjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Owners" EntityType="Self.Owners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectHealths" EntityType="Self.ProjectHealths" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectPictures" EntityType="Self.ProjectPictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectStatus" EntityType="Self.ProjectStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectTypes" EntityType="Self.ProjectTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VisitReports" EntityType="Self.VisitReports" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ApplicationsNewProject" Association="Self.FK_ApplicationsNewProject">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchitectNewProject" Association="Self.FK_ArchitectNewProject">
+            <End Role="Architects" EntitySet="Architects" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessPartnerNewProject" Association="Self.FK_BusinessPartnerNewProject">
+            <End Role="BusinessPartners" EntitySet="BusinessPartners" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixingTypeNewProject" Association="Self.FK_FixingTypeNewProject">
+            <End Role="FixingTypes" EntitySet="FixingTypes" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewProjectAutocadDiagrams" Association="Self.FK_NewProjectAutocadDiagrams">
+            <End Role="NewProjects" EntitySet="NewProjects" />
+            <End Role="AutocadDiagrams" EntitySet="AutocadDiagrams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewProjectVisitReport" Association="Self.FK_NewProjectVisitReport">
+            <End Role="NewProjects" EntitySet="NewProjects" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnerNewProject" Association="Self.FK_OwnerNewProject">
+            <End Role="Owners" EntitySet="Owners" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectHealthVisitReport" Association="Self.FK_ProjectHealthVisitReport">
+            <End Role="ProjectHealths" EntitySet="ProjectHealths" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectStatusVisitReport" Association="Self.FK_ProjectStatusVisitReport">
+            <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectTypeNewProject" Association="Self.FK_ProjectTypeNewProject">
+            <End Role="ProjectTypes" EntitySet="ProjectTypes" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitReportChecklist" Association="Self.FK_VisitReportChecklist">
+            <End Role="VisitReports" EntitySet="VisitReports" />
+            <End Role="Checklists" EntitySet="Checklists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitReportProjectPictures" Association="Self.FK_VisitReportProjectPictures">
+            <End Role="VisitReports" EntitySet="VisitReports" />
+            <End Role="ProjectPictures" EntitySet="ProjectPictures" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_ApplicationsNewProject" FromRole="Applications" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="Architect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirmName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_ArchitectNewProject" FromRole="Architects" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="AutocadDiagram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NewProject" Relationship="Self.FK_NewProjectAutocadDiagrams" FromRole="AutocadDiagrams" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="BusinessPartner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OwnerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Emailid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_BusinessPartnerNewProject" FromRole="BusinessPartners" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="Checklist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VisitReportId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VisitReport" Relationship="Self.FK_VisitReportChecklist" FromRole="Checklists" ToRole="VisitReports" />
+        </EntityType>
+        <EntityType Name="FixingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_FixingTypeNewProject" FromRole="FixingTypes" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="NewProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommencedOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConcludedOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArchitectId" Type="Int32" Nullable="false" />
+          <Property Name="BusinessPartnerId" Type="Int32" Nullable="false" />
+          <Property Name="PlanUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SectionsUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ElevationsUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TDImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AreaPanelCalculationUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConceptsDrawingUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OptimizationUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShopDrawingUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AnalysisUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOQUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InteriorUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OwnerId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FixingTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationsId" Type="Int32" Nullable="false" />
+          <Property Name="TDRenderImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="Self.FK_ApplicationsNewProject" FromRole="NewProjects" ToRole="Applications" />
+          <NavigationProperty Name="Architect" Relationship="Self.FK_ArchitectNewProject" FromRole="NewProjects" ToRole="Architects" />
+          <NavigationProperty Name="AutocadDiagrams" Relationship="Self.FK_NewProjectAutocadDiagrams" FromRole="NewProjects" ToRole="AutocadDiagrams" />
+          <NavigationProperty Name="BusinessPartner" Relationship="Self.FK_BusinessPartnerNewProject" FromRole="NewProjects" ToRole="BusinessPartners" />
+          <NavigationProperty Name="FixingType" Relationship="Self.FK_FixingTypeNewProject" FromRole="NewProjects" ToRole="FixingTypes" />
+          <NavigationProperty Name="VisitReports" Relationship="Self.FK_NewProjectVisitReport" FromRole="NewProjects" ToRole="VisitReports" />
+          <NavigationProperty Name="Owner" Relationship="Self.FK_OwnerNewProject" FromRole="NewProjects" ToRole="Owners" />
+          <NavigationProperty Name="ProjectType" Relationship="Self.FK_ProjectTypeNewProject" FromRole="NewProjects" ToRole="ProjectTypes" />
+        </EntityType>
+        <EntityType Name="Owner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_OwnerNewProject" FromRole="Owners" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="ProjectHealth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="VisitReports" Relationship="Self.FK_ProjectHealthVisitReport" FromRole="ProjectHealths" ToRole="VisitReports" />
+        </EntityType>
+        <EntityType Name="ProjectPicture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VisitReportId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VisitReport" Relationship="Self.FK_VisitReportProjectPictures" FromRole="ProjectPictures" ToRole="VisitReports" />
+        </EntityType>
+        <EntityType Name="ProjectStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="VisitReports" Relationship="Self.FK_ProjectStatusVisitReport" FromRole="ProjectStatus" ToRole="VisitReports" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NewProjects" Relationship="Self.FK_ProjectTypeNewProject" FromRole="ProjectTypes" ToRole="NewProjects" />
+        </EntityType>
+        <EntityType Name="VisitReport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VisitedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VisitedOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActionPlanReportUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewProjectId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectStatusId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectHealthId" Type="Int32" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectPictures" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Checklists" Relationship="Self.FK_VisitReportChecklist" FromRole="VisitReports" ToRole="Checklists" />
+          <NavigationProperty Name="NewProject" Relationship="Self.FK_NewProjectVisitReport" FromRole="VisitReports" ToRole="NewProjects" />
+          <NavigationProperty Name="ProjectHealth" Relationship="Self.FK_ProjectHealthVisitReport" FromRole="VisitReports" ToRole="ProjectHealths" />
+          <NavigationProperty Name="ProjectPictures1" Relationship="Self.FK_VisitReportProjectPictures" FromRole="VisitReports" ToRole="ProjectPictures" />
+          <NavigationProperty Name="ProjectStatu" Relationship="Self.FK_ProjectStatusVisitReport" FromRole="VisitReports" ToRole="ProjectStatus" />
+        </EntityType>
+        <Association Name="FK_ApplicationsNewProject">
+          <End Role="Applications" Type="Self.Application" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ApplicationsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchitectNewProject">
+          <End Role="Architects" Type="Self.Architect" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Architects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ArchitectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewProjectAutocadDiagrams">
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="1" />
+          <End Role="AutocadDiagrams" Type="Self.AutocadDiagram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewProjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutocadDiagrams">
+              <PropertyRef Name="NewProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessPartnerNewProject">
+          <End Role="BusinessPartners" Type="Self.BusinessPartner" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessPartners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="BusinessPartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitReportChecklist">
+          <End Role="VisitReports" Type="Self.VisitReport" Multiplicity="1" />
+          <End Role="Checklists" Type="Self.Checklist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitReports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Checklists">
+              <PropertyRef Name="VisitReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixingTypeNewProject">
+          <End Role="FixingTypes" Type="Self.FixingType" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FixingTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="FixingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewProjectVisitReport">
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewProjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="NewProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnerNewProject">
+          <End Role="Owners" Type="Self.Owner" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Owners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="OwnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectTypeNewProject">
+          <End Role="ProjectTypes" Type="Self.ProjectType" Multiplicity="1" />
+          <End Role="NewProjects" Type="Self.NewProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewProjects">
+              <PropertyRef Name="ProjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectHealthVisitReport">
+          <End Role="ProjectHealths" Type="Self.ProjectHealth" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectHealths">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="ProjectHealthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitReportProjectPictures">
+          <End Role="VisitReports" Type="Self.VisitReport" Multiplicity="1" />
+          <End Role="ProjectPictures" Type="Self.ProjectPicture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitReports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPictures">
+              <PropertyRef Name="VisitReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectStatusVisitReport">
+          <End Role="ProjectStatus" Type="Self.ProjectStatu" Multiplicity="1" />
+          <End Role="VisitReports" Type="Self.VisitReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitReports">
+              <PropertyRef Name="ProjectStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="Self.Application" />
+          <EntitySet Name="Architects" EntityType="Self.Architect" />
+          <EntitySet Name="AutocadDiagrams" EntityType="Self.AutocadDiagram" />
+          <EntitySet Name="BusinessPartners" EntityType="Self.BusinessPartner" />
+          <EntitySet Name="Checklists" EntityType="Self.Checklist" />
+          <EntitySet Name="FixingTypes" EntityType="Self.FixingType" />
+          <EntitySet Name="NewProjects" EntityType="Self.NewProject" />
+          <EntitySet Name="Owners" EntityType="Self.Owner" />
+          <EntitySet Name="ProjectHealths" EntityType="Self.ProjectHealth" />
+          <EntitySet Name="ProjectPictures" EntityType="Self.ProjectPicture" />
+          <EntitySet Name="ProjectStatus" EntityType="Self.ProjectStatu" />
+          <EntitySet Name="ProjectTypes" EntityType="Self.ProjectType" />
+          <EntitySet Name="VisitReports" EntityType="Self.VisitReport" />
+          <AssociationSet Name="FK_ApplicationsNewProject" Association="Self.FK_ApplicationsNewProject">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchitectNewProject" Association="Self.FK_ArchitectNewProject">
+            <End Role="Architects" EntitySet="Architects" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewProjectAutocadDiagrams" Association="Self.FK_NewProjectAutocadDiagrams">
+            <End Role="NewProjects" EntitySet="NewProjects" />
+            <End Role="AutocadDiagrams" EntitySet="AutocadDiagrams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessPartnerNewProject" Association="Self.FK_BusinessPartnerNewProject">
+            <End Role="BusinessPartners" EntitySet="BusinessPartners" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitReportChecklist" Association="Self.FK_VisitReportChecklist">
+            <End Role="VisitReports" EntitySet="VisitReports" />
+            <End Role="Checklists" EntitySet="Checklists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixingTypeNewProject" Association="Self.FK_FixingTypeNewProject">
+            <End Role="FixingTypes" EntitySet="FixingTypes" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewProjectVisitReport" Association="Self.FK_NewProjectVisitReport">
+            <End Role="NewProjects" EntitySet="NewProjects" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnerNewProject" Association="Self.FK_OwnerNewProject">
+            <End Role="Owners" EntitySet="Owners" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectTypeNewProject" Association="Self.FK_ProjectTypeNewProject">
+            <End Role="ProjectTypes" EntitySet="ProjectTypes" />
+            <End Role="NewProjects" EntitySet="NewProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectHealthVisitReport" Association="Self.FK_ProjectHealthVisitReport">
+            <End Role="ProjectHealths" EntitySet="ProjectHealths" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitReportProjectPictures" Association="Self.FK_VisitReportProjectPictures">
+            <End Role="VisitReports" EntitySet="VisitReports" />
+            <End Role="ProjectPictures" EntitySet="ProjectPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectStatusVisitReport" Association="Self.FK_ProjectStatusVisitReport">
+            <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+            <End Role="VisitReports" EntitySet="VisitReports" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PMSModelStoreContainer" CdmEntityContainer="PMSEntities">
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="PMSModel.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Architects">
+            <EntityTypeMapping TypeName="PMSModel.Architect">
+              <MappingFragment StoreEntitySet="Architects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FirmName" ColumnName="FirmName" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutocadDiagrams">
+            <EntityTypeMapping TypeName="PMSModel.AutocadDiagram">
+              <MappingFragment StoreEntitySet="AutocadDiagrams">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="NewProjectId" ColumnName="NewProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessPartners">
+            <EntityTypeMapping TypeName="PMSModel.BusinessPartner">
+              <MappingFragment StoreEntitySet="BusinessPartners">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Checklists">
+            <EntityTypeMapping TypeName="PMSModel.Checklist">
+              <MappingFragment StoreEntitySet="Checklists">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="VisitReportId" ColumnName="VisitReportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FixingTypes">
+            <EntityTypeMapping TypeName="PMSModel.FixingType">
+              <MappingFragment StoreEntitySet="FixingTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewProjects">
+            <EntityTypeMapping TypeName="PMSModel.NewProject">
+              <MappingFragment StoreEntitySet="NewProjects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="CommencedOn" ColumnName="CommencedOn" />
+                <ScalarProperty Name="ConcludedOn" ColumnName="ConcludedOn" />
+                <ScalarProperty Name="ArchitectId" ColumnName="ArchitectId" />
+                <ScalarProperty Name="BusinessPartnerId" ColumnName="BusinessPartnerId" />
+                <ScalarProperty Name="PlanUrl" ColumnName="PlanUrl" />
+                <ScalarProperty Name="SectionsUrl" ColumnName="SectionsUrl" />
+                <ScalarProperty Name="ElevationsUrl" ColumnName="ElevationsUrl" />
+                <ScalarProperty Name="TDImageUrl" ColumnName="TDImageUrl" />
+                <ScalarProperty Name="AreaPanelCalculationUrl" ColumnName="AreaPanelCalculationUrl" />
+                <ScalarProperty Name="ConceptsDrawingUrl" ColumnName="ConceptsDrawingUrl" />
+                <ScalarProperty Name="OptimizationUrl" ColumnName="OptimizationUrl" />
+                <ScalarProperty Name="ShopDrawingUrl" ColumnName="ShopDrawingUrl" />
+                <ScalarProperty Name="AnalysisUrl" ColumnName="AnalysisUrl" />
+                <ScalarProperty Name="BOQUrl" ColumnName="BOQUrl" />
+                <ScalarProperty Name="InteriorUrl" ColumnName="InteriorUrl" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+                <ScalarProperty Name="FixingTypeId" ColumnName="FixingTypeId" />
+                <ScalarProperty Name="ApplicationsId" ColumnName="ApplicationsId" />
+                <ScalarProperty Name="TDRenderImageUrl" ColumnName="TDRenderImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Owners">
+            <EntityTypeMapping TypeName="PMSModel.Owner">
+              <MappingFragment StoreEntitySet="Owners">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectHealths">
+            <EntityTypeMapping TypeName="PMSModel.ProjectHealth">
+              <MappingFragment StoreEntitySet="ProjectHealths">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectPictures">
+            <EntityTypeMapping TypeName="PMSModel.ProjectPicture">
+              <MappingFragment StoreEntitySet="ProjectPictures">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="VisitReportId" ColumnName="VisitReportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectStatus">
+            <EntityTypeMapping TypeName="PMSModel.ProjectStatu">
+              <MappingFragment StoreEntitySet="ProjectStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectTypes">
+            <EntityTypeMapping TypeName="PMSModel.ProjectType">
+              <MappingFragment StoreEntitySet="ProjectTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitReports">
+            <EntityTypeMapping TypeName="PMSModel.VisitReport">
+              <MappingFragment StoreEntitySet="VisitReports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VisitedBy" ColumnName="VisitedBy" />
+                <ScalarProperty Name="VisitedOn" ColumnName="VisitedOn" />
+                <ScalarProperty Name="ActionPlanReportUrl" ColumnName="ActionPlanReportUrl" />
+                <ScalarProperty Name="NewProjectId" ColumnName="NewProjectId" />
+                <ScalarProperty Name="ProjectStatusId" ColumnName="ProjectStatusId" />
+                <ScalarProperty Name="ProjectHealthId" ColumnName="ProjectHealthId" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="ProjectPictures" ColumnName="ProjectPictures" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
