@@ -31,10 +31,6 @@
     <!-- start: Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- end: Favicon -->
-
-
-
-
 </head>
 <body>
     <!-- start: Header -->
@@ -54,10 +50,9 @@
                         <!-- start: User Dropdown -->
                         <li class="dropdown">
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="halflings-icon white user"></i> @if (Request.IsAuthenticated)
+                                @*<i class="halflings-icon white user"></i>*@ @if (Request.IsAuthenticated)
                                 {
-                                    var x = User.Identity.GetUserName();
-                                    @Html.Label("", User.Identity.GetUserName());
+                                    @Html.Label("", User.Identity.GetUserName(), new { @class = "user" });
                                 }
                                 <span class="caret"></span>
                             </a>
@@ -65,12 +60,8 @@
                                 <li class="dropdown-menu-title">
                                     <span>Account Settings</span>
                                 </li>
-                                <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-                                <li>
-                                    <i class="halflings-icon off">
-                                        @Html.ActionLink("Logout", "LogOff", new { Controller = "Account", Action = FormMethod.Post });
-                                    </i>
-                                </li>
+                                @*<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>*@
+                                <li><a href="/Account/LogOff"><i class="halflings-icon off"></i> Logout</a></li>
                             </ul>
                         </li>
                         <!-- end: User Dropdown -->
@@ -107,8 +98,8 @@
             <div id="sidebar-left" class="span2">
                 <div class="nav-collapse sidebar-nav">
                     <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li><a href="@Url.Content("~/NewProjects/Create")"><i class="icon-edit"></i><span class="hidden-tablet"> New Enquiry</span></a></li>
                         <li><a href="@Url.Content("~/NewProjects/Index")"><i class="icon-tasks"></i><span class="hidden-tablet"> All Enquiry</span></a></li>
+                        <li><a href="@Url.Content("~/NewProjects/Create")"><i class="icon-edit"></i><span class="hidden-tablet"> New Enquiry</span></a></li>
                         <li><a href="@Url.Content("~/VisitReports/Create")"><i class="icon-tasks"></i><span class="hidden-tablet"> New Visits</span></a></li>
                     </ul>
                 </div>
@@ -119,7 +110,7 @@
     </div>
     <footer>
         <p>
-            <span style="text-align:left;float:left">&copy; 2013 <a href="http://jiji262.github.io/Bootstrap_Metro_Dashboard/" alt="Bootstrap_Metro_Dashboard">Bootstrap Metro Dashboard</a></span>
+            <span style="text-align:left;float:left">&copy; 2013 </span>
 
         </p>
     </footer>

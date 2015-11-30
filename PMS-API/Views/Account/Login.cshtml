@@ -111,7 +111,7 @@
                 </section>
                 @* </form>*@
                 <hr>
-                <h3>@Html.ActionLink("Forgot your password?", "ForgotPassword")</h3>
+                @*<h3>@Html.ActionLink("Forgot your password?", "ForgotPassword")</h3>*@
                 <p>
                     No problem,@Html.ActionLink("Click here", "Register")  to get a new password.
                 </p>
@@ -121,3 +121,7 @@
     </div><!--/.fluid-container-->
 
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
