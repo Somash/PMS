@@ -56,20 +56,33 @@
                             </div>
                         </div>
 
-                        <div class="control-group">
+                        @*<div class="control-group">
                             <label class="control-label" for="focusedInput">CommencedOn(MM/DD/YY)</label>
                             <div class="controls">
                                 @Html.EditorFor(Model => Model.CommencedOn)
                             </div>
+                        </div>*@
+
+                        <div class="control-group">
+                            <label class="control-label" for="date01">CommencedOn</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge datepicker" id="CommencedOn" name="CommencedOn" value="" />
+                            </div>
                         </div>
 
                         <div class="control-group">
+                            <label class="control-label" for="date01">ConcludedOn</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge datepicker" id="ConcludedOn" name="ConcludedOn" value="" />
+                            </div>
+                        </div>
+
+                        @*<div class="control-group">
                             <label class="control-label" for="focusedInput">ConcludedOn(MM/DD/YY)</label>
                             <div class="controls">
                                 @Html.EditorFor(Model => Model.ConcludedOn)
-                                @*<input type="text" class="input-xlarge datepicker" id="ConcludedOn" value="02/16/12" />*@
                             </div>
-                        </div>
+                        </div>*@
 
                         <div class="control-group">
                             <label class="control-label" name="architects" for="selectError3">Architects</label>

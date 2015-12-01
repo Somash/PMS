@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/15/2015 23:06:14
--- Generated from EDMX file: D:\Soms\Projects\PMS-git\PMS\PMS-API\Models\TestEntiryDataModel.edmx
+-- Date Created: 11/30/2015 22:29:26
+-- Generated from EDMX file: C:\Users\Lakeba\Documents\Visual Studio 2015\Projects\PMS-API\PMS-API\Models\DBModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,15 +17,144 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ApplicationsNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_ApplicationsNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArchitectNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_ArchitectNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_BusinessPartnerNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_BusinessPartnerNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FixingTypeNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_FixingTypeNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_NewProjectAutocadDiagrams]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AutocadDiagrams] DROP CONSTRAINT [FK_NewProjectAutocadDiagrams];
+GO
+IF OBJECT_ID(N'[dbo].[FK_NewProjectVisitReport]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VisitReports] DROP CONSTRAINT [FK_NewProjectVisitReport];
+GO
+IF OBJECT_ID(N'[dbo].[FK_OwnerNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_OwnerNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectHealthVisitReport]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VisitReports] DROP CONSTRAINT [FK_ProjectHealthVisitReport];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectStatusVisitReport]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VisitReports] DROP CONSTRAINT [FK_ProjectStatusVisitReport];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectTypeNewProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NewProjects] DROP CONSTRAINT [FK_ProjectTypeNewProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VisitReportChecklist]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Checklists] DROP CONSTRAINT [FK_VisitReportChecklist];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VisitReportProjectPictures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectPictures] DROP CONSTRAINT [FK_VisitReportProjectPictures];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Applications]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Applications];
+GO
+IF OBJECT_ID(N'[dbo].[Architects]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Architects];
+GO
+IF OBJECT_ID(N'[dbo].[AutocadDiagrams]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AutocadDiagrams];
+GO
+IF OBJECT_ID(N'[dbo].[BusinessPartners]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BusinessPartners];
+GO
+IF OBJECT_ID(N'[dbo].[Checklists]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Checklists];
+GO
+IF OBJECT_ID(N'[dbo].[FixingTypes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FixingTypes];
+GO
+IF OBJECT_ID(N'[dbo].[NewProjects]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NewProjects];
+GO
+IF OBJECT_ID(N'[dbo].[Owners]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Owners];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectHealths]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectHealths];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectPictures]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectPictures];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectStatus]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectStatus];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectTypes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectTypes];
+GO
+IF OBJECT_ID(N'[dbo].[VisitReports]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[VisitReports];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
+
+-- Creating table 'Applications'
+CREATE TABLE [dbo].[Applications] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Architects'
+CREATE TABLE [dbo].[Architects] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [FullName] nvarchar(max)  NOT NULL,
+    [City] nvarchar(max)  NOT NULL,
+    [Address] nvarchar(max)  NOT NULL,
+    [FirmName] nvarchar(max)  NOT NULL,
+    [ContactNo] nvarchar(max)  NOT NULL,
+    [EmailId] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'AutocadDiagrams'
+CREATE TABLE [dbo].[AutocadDiagrams] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Url] nvarchar(max)  NOT NULL,
+    [NewProjectId] int  NOT NULL
+);
+GO
+
+-- Creating table 'BusinessPartners'
+CREATE TABLE [dbo].[BusinessPartners] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [FullName] nvarchar(max)  NOT NULL,
+    [City] nvarchar(max)  NOT NULL,
+    [Address] nvarchar(max)  NOT NULL,
+    [OwnerName] nvarchar(max)  NOT NULL,
+    [ContactNo] nvarchar(max)  NOT NULL,
+    [Emailid] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Checklists'
+CREATE TABLE [dbo].[Checklists] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [VisitReportId] int  NOT NULL
+);
+GO
+
+-- Creating table 'FixingTypes'
+CREATE TABLE [dbo].[FixingTypes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
 
 -- Creating table 'NewProjects'
 CREATE TABLE [dbo].[NewProjects] (
@@ -56,27 +185,10 @@ CREATE TABLE [dbo].[NewProjects] (
 );
 GO
 
--- Creating table 'BusinessPartners'
-CREATE TABLE [dbo].[BusinessPartners] (
+-- Creating table 'Owners'
+CREATE TABLE [dbo].[Owners] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [FullName] nvarchar(max)  NOT NULL,
-    [City] nvarchar(max)  NOT NULL,
-    [Address] nvarchar(max)  NOT NULL,
-    [OwnerName] nvarchar(max)  NOT NULL,
-    [ContactNo] nvarchar(max)  NOT NULL,
-    [Emailid] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'Architects'
-CREATE TABLE [dbo].[Architects] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [FullName] nvarchar(max)  NOT NULL,
-    [City] nvarchar(max)  NOT NULL,
-    [Address] nvarchar(max)  NOT NULL,
-    [FirmName] nvarchar(max)  NOT NULL,
-    [ContactNo] nvarchar(max)  NOT NULL,
-    [EmailId] nvarchar(max)  NOT NULL
+    [FullName] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -95,50 +207,8 @@ CREATE TABLE [dbo].[ProjectPictures] (
 );
 GO
 
--- Creating table 'Checklists'
-CREATE TABLE [dbo].[Checklists] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL,
-    [VisitReportId] int  NOT NULL
-);
-GO
-
--- Creating table 'AutocadDiagrams'
-CREATE TABLE [dbo].[AutocadDiagrams] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Url] nvarchar(max)  NOT NULL,
-    [NewProjectId] int  NOT NULL
-);
-GO
-
 -- Creating table 'ProjectStatus'
 CREATE TABLE [dbo].[ProjectStatus] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'Owners'
-CREATE TABLE [dbo].[Owners] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [FullName] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'VisitReports'
-CREATE TABLE [dbo].[VisitReports] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [VisitedBy] nvarchar(max)  NOT NULL,
-    [VisitedOn] nvarchar(max)  NOT NULL,
-    [ActionPlanReportUrl] nvarchar(max)  NOT NULL,
-    [NewProjectId] int  NOT NULL,
-    [ProjectStatusId] int  NOT NULL,
-    [ProjectHealthId] int  NOT NULL
-);
-GO
-
--- Creating table 'FixingTypes'
-CREATE TABLE [dbo].[FixingTypes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL
 );
@@ -151,10 +221,18 @@ CREATE TABLE [dbo].[ProjectTypes] (
 );
 GO
 
--- Creating table 'Applications'
-CREATE TABLE [dbo].[Applications] (
+-- Creating table 'VisitReports'
+CREATE TABLE [dbo].[VisitReports] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL
+    [VisitedBy] nvarchar(max)  NOT NULL,
+    [VisitedOn] nvarchar(max)  NOT NULL,
+    [ActionPlanReportUrl] nvarchar(max)  NOT NULL,
+    [NewProjectId] int  NOT NULL,
+    [ProjectStatusId] int  NOT NULL,
+    [ProjectHealthId] int  NOT NULL,
+    [comments] nvarchar(max)  NULL,
+    [notes] nvarchar(max)  NULL,
+    [ProjectPictures] nvarchar(max)  NULL
 );
 GO
 
@@ -162,9 +240,21 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [Id] in table 'NewProjects'
-ALTER TABLE [dbo].[NewProjects]
-ADD CONSTRAINT [PK_NewProjects]
+-- Creating primary key on [Id] in table 'Applications'
+ALTER TABLE [dbo].[Applications]
+ADD CONSTRAINT [PK_Applications]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Architects'
+ALTER TABLE [dbo].[Architects]
+ADD CONSTRAINT [PK_Architects]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'AutocadDiagrams'
+ALTER TABLE [dbo].[AutocadDiagrams]
+ADD CONSTRAINT [PK_AutocadDiagrams]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -174,9 +264,27 @@ ADD CONSTRAINT [PK_BusinessPartners]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Architects'
-ALTER TABLE [dbo].[Architects]
-ADD CONSTRAINT [PK_Architects]
+-- Creating primary key on [Id] in table 'Checklists'
+ALTER TABLE [dbo].[Checklists]
+ADD CONSTRAINT [PK_Checklists]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'FixingTypes'
+ALTER TABLE [dbo].[FixingTypes]
+ADD CONSTRAINT [PK_FixingTypes]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'NewProjects'
+ALTER TABLE [dbo].[NewProjects]
+ADD CONSTRAINT [PK_NewProjects]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Owners'
+ALTER TABLE [dbo].[Owners]
+ADD CONSTRAINT [PK_Owners]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -192,39 +300,9 @@ ADD CONSTRAINT [PK_ProjectPictures]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Checklists'
-ALTER TABLE [dbo].[Checklists]
-ADD CONSTRAINT [PK_Checklists]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'AutocadDiagrams'
-ALTER TABLE [dbo].[AutocadDiagrams]
-ADD CONSTRAINT [PK_AutocadDiagrams]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'ProjectStatus'
 ALTER TABLE [dbo].[ProjectStatus]
 ADD CONSTRAINT [PK_ProjectStatus]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'Owners'
-ALTER TABLE [dbo].[Owners]
-ADD CONSTRAINT [PK_Owners]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'VisitReports'
-ALTER TABLE [dbo].[VisitReports]
-ADD CONSTRAINT [PK_VisitReports]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'FixingTypes'
-ALTER TABLE [dbo].[FixingTypes]
-ADD CONSTRAINT [PK_FixingTypes]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -234,9 +312,9 @@ ADD CONSTRAINT [PK_ProjectTypes]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Applications'
-ALTER TABLE [dbo].[Applications]
-ADD CONSTRAINT [PK_Applications]
+-- Creating primary key on [Id] in table 'VisitReports'
+ALTER TABLE [dbo].[VisitReports]
+ADD CONSTRAINT [PK_VisitReports]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -244,79 +322,19 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [NewProjectId] in table 'VisitReports'
-ALTER TABLE [dbo].[VisitReports]
-ADD CONSTRAINT [FK_NewProjectVisitReport]
-    FOREIGN KEY ([NewProjectId])
-    REFERENCES [dbo].[NewProjects]
+-- Creating foreign key on [ApplicationsId] in table 'NewProjects'
+ALTER TABLE [dbo].[NewProjects]
+ADD CONSTRAINT [FK_ApplicationsNewProject]
+    FOREIGN KEY ([ApplicationsId])
+    REFERENCES [dbo].[Applications]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_NewProjectVisitReport'
-CREATE INDEX [IX_FK_NewProjectVisitReport]
-ON [dbo].[VisitReports]
-    ([NewProjectId]);
-GO
-
--- Creating foreign key on [ProjectStatusId] in table 'VisitReports'
-ALTER TABLE [dbo].[VisitReports]
-ADD CONSTRAINT [FK_ProjectStatusVisitReport]
-    FOREIGN KEY ([ProjectStatusId])
-    REFERENCES [dbo].[ProjectStatus]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProjectStatusVisitReport'
-CREATE INDEX [IX_FK_ProjectStatusVisitReport]
-ON [dbo].[VisitReports]
-    ([ProjectStatusId]);
-GO
-
--- Creating foreign key on [ProjectHealthId] in table 'VisitReports'
-ALTER TABLE [dbo].[VisitReports]
-ADD CONSTRAINT [FK_ProjectHealthVisitReport]
-    FOREIGN KEY ([ProjectHealthId])
-    REFERENCES [dbo].[ProjectHealths]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProjectHealthVisitReport'
-CREATE INDEX [IX_FK_ProjectHealthVisitReport]
-ON [dbo].[VisitReports]
-    ([ProjectHealthId]);
-GO
-
--- Creating foreign key on [VisitReportId] in table 'ProjectPictures'
-ALTER TABLE [dbo].[ProjectPictures]
-ADD CONSTRAINT [FK_VisitReportProjectPictures]
-    FOREIGN KEY ([VisitReportId])
-    REFERENCES [dbo].[VisitReports]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_VisitReportProjectPictures'
-CREATE INDEX [IX_FK_VisitReportProjectPictures]
-ON [dbo].[ProjectPictures]
-    ([VisitReportId]);
-GO
-
--- Creating foreign key on [VisitReportId] in table 'Checklists'
-ALTER TABLE [dbo].[Checklists]
-ADD CONSTRAINT [FK_VisitReportChecklist]
-    FOREIGN KEY ([VisitReportId])
-    REFERENCES [dbo].[VisitReports]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_VisitReportChecklist'
-CREATE INDEX [IX_FK_VisitReportChecklist]
-ON [dbo].[Checklists]
-    ([VisitReportId]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_ApplicationsNewProject'
+CREATE INDEX [IX_FK_ApplicationsNewProject]
+ON [dbo].[NewProjects]
+    ([ApplicationsId]);
 GO
 
 -- Creating foreign key on [ArchitectId] in table 'NewProjects'
@@ -334,6 +352,21 @@ ON [dbo].[NewProjects]
     ([ArchitectId]);
 GO
 
+-- Creating foreign key on [NewProjectId] in table 'AutocadDiagrams'
+ALTER TABLE [dbo].[AutocadDiagrams]
+ADD CONSTRAINT [FK_NewProjectAutocadDiagrams]
+    FOREIGN KEY ([NewProjectId])
+    REFERENCES [dbo].[NewProjects]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_NewProjectAutocadDiagrams'
+CREATE INDEX [IX_FK_NewProjectAutocadDiagrams]
+ON [dbo].[AutocadDiagrams]
+    ([NewProjectId]);
+GO
+
 -- Creating foreign key on [BusinessPartnerId] in table 'NewProjects'
 ALTER TABLE [dbo].[NewProjects]
 ADD CONSTRAINT [FK_BusinessPartnerNewProject]
@@ -349,18 +382,48 @@ ON [dbo].[NewProjects]
     ([BusinessPartnerId]);
 GO
 
--- Creating foreign key on [NewProjectId] in table 'AutocadDiagrams'
-ALTER TABLE [dbo].[AutocadDiagrams]
-ADD CONSTRAINT [FK_NewProjectAutocadDiagrams]
+-- Creating foreign key on [VisitReportId] in table 'Checklists'
+ALTER TABLE [dbo].[Checklists]
+ADD CONSTRAINT [FK_VisitReportChecklist]
+    FOREIGN KEY ([VisitReportId])
+    REFERENCES [dbo].[VisitReports]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_VisitReportChecklist'
+CREATE INDEX [IX_FK_VisitReportChecklist]
+ON [dbo].[Checklists]
+    ([VisitReportId]);
+GO
+
+-- Creating foreign key on [FixingTypeId] in table 'NewProjects'
+ALTER TABLE [dbo].[NewProjects]
+ADD CONSTRAINT [FK_FixingTypeNewProject]
+    FOREIGN KEY ([FixingTypeId])
+    REFERENCES [dbo].[FixingTypes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FixingTypeNewProject'
+CREATE INDEX [IX_FK_FixingTypeNewProject]
+ON [dbo].[NewProjects]
+    ([FixingTypeId]);
+GO
+
+-- Creating foreign key on [NewProjectId] in table 'VisitReports'
+ALTER TABLE [dbo].[VisitReports]
+ADD CONSTRAINT [FK_NewProjectVisitReport]
     FOREIGN KEY ([NewProjectId])
     REFERENCES [dbo].[NewProjects]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_NewProjectAutocadDiagrams'
-CREATE INDEX [IX_FK_NewProjectAutocadDiagrams]
-ON [dbo].[AutocadDiagrams]
+-- Creating non-clustered index for FOREIGN KEY 'FK_NewProjectVisitReport'
+CREATE INDEX [IX_FK_NewProjectVisitReport]
+ON [dbo].[VisitReports]
     ([NewProjectId]);
 GO
 
@@ -394,34 +457,49 @@ ON [dbo].[NewProjects]
     ([ProjectTypeId]);
 GO
 
--- Creating foreign key on [FixingTypeId] in table 'NewProjects'
-ALTER TABLE [dbo].[NewProjects]
-ADD CONSTRAINT [FK_FixingTypeNewProject]
-    FOREIGN KEY ([FixingTypeId])
-    REFERENCES [dbo].[FixingTypes]
+-- Creating foreign key on [ProjectHealthId] in table 'VisitReports'
+ALTER TABLE [dbo].[VisitReports]
+ADD CONSTRAINT [FK_ProjectHealthVisitReport]
+    FOREIGN KEY ([ProjectHealthId])
+    REFERENCES [dbo].[ProjectHealths]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_FixingTypeNewProject'
-CREATE INDEX [IX_FK_FixingTypeNewProject]
-ON [dbo].[NewProjects]
-    ([FixingTypeId]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectHealthVisitReport'
+CREATE INDEX [IX_FK_ProjectHealthVisitReport]
+ON [dbo].[VisitReports]
+    ([ProjectHealthId]);
 GO
 
--- Creating foreign key on [ApplicationsId] in table 'NewProjects'
-ALTER TABLE [dbo].[NewProjects]
-ADD CONSTRAINT [FK_ApplicationsNewProject]
-    FOREIGN KEY ([ApplicationsId])
-    REFERENCES [dbo].[Applications]
+-- Creating foreign key on [VisitReportId] in table 'ProjectPictures'
+ALTER TABLE [dbo].[ProjectPictures]
+ADD CONSTRAINT [FK_VisitReportProjectPictures]
+    FOREIGN KEY ([VisitReportId])
+    REFERENCES [dbo].[VisitReports]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_ApplicationsNewProject'
-CREATE INDEX [IX_FK_ApplicationsNewProject]
-ON [dbo].[NewProjects]
-    ([ApplicationsId]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_VisitReportProjectPictures'
+CREATE INDEX [IX_FK_VisitReportProjectPictures]
+ON [dbo].[ProjectPictures]
+    ([VisitReportId]);
+GO
+
+-- Creating foreign key on [ProjectStatusId] in table 'VisitReports'
+ALTER TABLE [dbo].[VisitReports]
+ADD CONSTRAINT [FK_ProjectStatusVisitReport]
+    FOREIGN KEY ([ProjectStatusId])
+    REFERENCES [dbo].[ProjectStatus]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectStatusVisitReport'
+CREATE INDEX [IX_FK_ProjectStatusVisitReport]
+ON [dbo].[VisitReports]
+    ([ProjectStatusId]);
 GO
 
 -- --------------------------------------------------
