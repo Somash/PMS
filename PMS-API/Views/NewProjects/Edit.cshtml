@@ -288,9 +288,11 @@
 @*@using (Html.BeginForm())
     {     @Html.AntiForgeryToken()*@
 <div class="box-content">
-
-
-    <form class="form-horizontal" action="/NewProjects/Create" enctype="multipart/form-data" method="post">
+    @using (Html.BeginForm())
+    {
+          @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+        @*<form class="form-horizontal" action="/NewProjects/Create" enctype="multipart/form-data" method="post">*@
         <fieldset>
             <div class="control-group">
                 <label class="control-label" for="selectError">Project Name</label>
@@ -464,8 +466,6 @@
                 <button class="btn">Cancel</button>
             </div>
         </fieldset>
-    </form>
-</div>
-        </div><!--/span-->
-    </div><!--/row-->
+        @*</form>*@
+    }
 </div>

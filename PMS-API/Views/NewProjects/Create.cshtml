@@ -57,11 +57,11 @@
                         </div>
 
                         @*<div class="control-group">
-                            <label class="control-label" for="focusedInput">CommencedOn(MM/DD/YY)</label>
-                            <div class="controls">
-                                @Html.EditorFor(Model => Model.CommencedOn)
-                            </div>
-                        </div>*@
+                                <label class="control-label" for="focusedInput">CommencedOn(MM/DD/YY)</label>
+                                <div class="controls">
+                                    @Html.EditorFor(Model => Model.CommencedOn)
+                                </div>
+                            </div>*@
 
                         <div class="control-group">
                             <label class="control-label" for="date01">CommencedOn</label>
@@ -78,24 +78,16 @@
                         </div>
 
                         @*<div class="control-group">
-                            <label class="control-label" for="focusedInput">ConcludedOn(MM/DD/YY)</label>
-                            <div class="controls">
-                                @Html.EditorFor(Model => Model.ConcludedOn)
-                            </div>
-                        </div>*@
+                                <label class="control-label" for="focusedInput">ConcludedOn(MM/DD/YY)</label>
+                                <div class="controls">
+                                    @Html.EditorFor(Model => Model.ConcludedOn)
+                                </div>
+                            </div>*@
 
                         <div class="control-group">
                             <label class="control-label" name="architects" for="selectError3">Architects</label>
                             <div class="controls">
                                 @Html.DropDownList("ArchitectId", null, htmlAttributes: new { @class = "form-control" })
-                                @*<select id="architects" name="architects">
-                                        @{
-                                            foreach (@PMS_API.Models.Architect architect in ViewBag.ArchitectId)
-                                            {
-                                                <option value="@architect.Id">@architect.FullName</option>
-                                            }
-                                        }
-                                    </select>*@
                             </div>
                         </div>
 

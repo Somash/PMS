@@ -8,6 +8,11 @@ namespace PMS_API.Models
 {
     public class newProjectModels
     {
+        public newProjectModels()
+        {
+            PlanUrl = SectionsUrl = ElevationsUrl = TDImageUrl = AreaPanelCalculationUrl = ConceptsDrawingUrl = OptimizationUrl = ShopDrawingUrl = AnalysisUrl = BOQUrl = InteriorUrl = TDRenderImageUrl = "";
+
+        }
         public string ProjectName { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
@@ -30,7 +35,7 @@ namespace PMS_API.Models
         public int ProjectTypeId { get; set; }
         public int FixingTypeId { get; set; }
         public int ApplicationsId { get; set; }
-        public HttpPostedFileBase TDRenderImageUrl { get; set; }
+        public string TDRenderImageUrl { get; set; }
 
         public string saveFile(HttpPostedFileBase file, string Directory)
         {
