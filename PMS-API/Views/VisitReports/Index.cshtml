@@ -15,7 +15,7 @@
         </li>
         <li>
             <i class="icon-edit"></i>
-            <a href="#">All Enquiry</a>
+            <a href="#">All Visits</a>
         </li>
     </ul>
 
@@ -23,7 +23,7 @@
     <div class="row-fluid sortable">
         <div class="box span12">
             <div class="box-header" data-original-title="">
-                <h2><i class="halflings-icon edit"></i><span class="break"></span>All Enquiry</h2>
+                <h2><i class="halflings-icon edit"></i><span class="break"></span>All Visits</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -43,7 +43,9 @@
                             <th>Status</th>
                             <th>Comments</th>
                             <th>Notes</th>
-                            <th>Action Plan</th>
+                            <th>Project name</th>
+                            <th>Owner</th>
+                            <th>business partner</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -57,7 +59,9 @@
                                 <td>@Html.DisplayFor(modelItem => item.ProjectStatu.Name)</td>
                                 <td>@Html.DisplayFor(modelItem => item.comments)</td>
                                 <td>@Html.DisplayFor(modelItem => item.notes)</td>
-                                <td>@Html.DisplayFor(modelItem => item.ActionPlanReportUrl)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NewProject.ProjectName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NewProject.Owner.FullName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NewProject.BusinessPartner.FullName)</td>
 
                                 <td class="center">
                                     <a class="btn btn-info" href="/Visits/Edit/@item.Id">

@@ -67,27 +67,27 @@
                         <div class="control-group">
                             <label class="control-label" for="selectError">Comments</label>
                             <div class="controls">
-                                <input class="input-xlarge disabled" id="comments" type="textarea" name="comments" value="" />
+                                @Html.TextArea("comments", htmlAttributes: new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="selectError">Notes</label>
                             <div class="controls">
-                                <input class="input-xlarge disabled" id="notes" type="text" name="notes" value="" />
+                                @Html.TextArea("notes", htmlAttributes: new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="date01">VisitedOn</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge datepicker" id="VisitedOn" name="VisitedOn" value="" />
+                                <input type="text" class="input-xlarge datepicker" id="VisitedOn" name="VisitedOn" value="@DateTime.Now" />
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="selectError">Visited By</label>
                             <div class="controls">
-                                <input class="input-xlarge disabled" id="visitedBy" type="text" name="visitedBy" value="" />
+                                <input class="input-xlarge disabled" id="visitedBy" type="text" name="visitedBy" value="@User.Identity.Name" />
                             </div>
                         </div>
 
