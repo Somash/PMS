@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>VisitReport</h4>
         <hr />
@@ -21,7 +21,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.VisitedBy, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.VisitedBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.VisitedBy, new { htmlAttributes = new { @class = "form-control", data_rel = "chosen" } })
                 @Html.ValidationMessageFor(model => model.VisitedBy, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NewProjectId, "NewProjectId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("NewProjectId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("NewProjectId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                 @Html.ValidationMessageFor(model => model.NewProjectId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -53,7 +53,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectStatusId, "ProjectStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProjectStatusId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ProjectStatusId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                 @Html.ValidationMessageFor(model => model.ProjectStatusId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectHealthId, "ProjectHealthId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProjectHealthId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ProjectHealthId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                 @Html.ValidationMessageFor(model => model.ProjectHealthId, "", new { @class = "text-danger" })
             </div>
         </div>

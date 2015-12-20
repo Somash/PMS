@@ -87,7 +87,7 @@
                         <div class="control-group">
                             <label class="control-label" name="architects" for="selectError3">Architects</label>
                             <div class="controls">
-                                @Html.DropDownList("ArchitectId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("ArchitectId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
                         </div>
 
@@ -95,7 +95,7 @@
                             <label class="control-label" for="focusedInput">BusinessPartners</label>
                             <div class="controls">
                                 @*<select id="businesspartners" name="businesspartners"></select>*@
-                                @Html.DropDownList("BusinessPartnerId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("BusinessPartnerId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
                         </div>
 
@@ -104,7 +104,7 @@
 
                             <div class="controls">
                                 @*<select id="owners" name="owners"></select>*@
-                                @Html.DropDownList("OwnerId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("OwnerId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
 
                         </div>
@@ -114,21 +114,21 @@
                             <label class="control-label" name="Origin of the Project" for="selectError3">Projects</label>
                             <div class="controls">
                                 @*<select id="Projects" name="Projects"></select>*@
-                                @Html.DropDownList("ProjectTypeId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("ProjectTypeId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" name="Already associated with FunderMax">FixingTypes</label>
                             <div class="controls">
                                 @*<select id="FixingTypes" name="FixingTypes"></select>*@
-                                @Html.DropDownList("FixingTypeId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("FixingTypeId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="focusedInput">Applications</label>
                             <div class="controls">
                                 @*<select id="Applications" name="Applications"></select>*@
-                                @Html.DropDownList("ApplicationsId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("ApplicationsId", null, htmlAttributes: new { @class = "form-control", data_rel = "chosen" })
                             </div>
                         </div>
                         <div class="control-group">
